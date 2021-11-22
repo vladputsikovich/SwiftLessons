@@ -1,5 +1,5 @@
 //Урок 5 - задания
-enum Sex{
+enum Sex {
   case man
   case woman
 }
@@ -17,13 +17,13 @@ class Human {
     self.sex = sex
   }
 
-  func move(){
+  func move() {
     print("Человек идет")
   }
 }
 
 class Runner: Human {
-  override func move(){
+  override func move() {
     print("Бегун бежит")
   }
 }
