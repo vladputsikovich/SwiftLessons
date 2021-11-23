@@ -29,26 +29,26 @@ print("\(returnMax(numbers))")
 
 
 /////////////////////////////
-func printPerson(_ pers: (String, Int, String)){
+func printPerson(_ pers: (String, Int, String)) {
   print("Имя: \(pers.0)\nВозраст: \(pers.1)\nПол: \(pers.2)\n")
 }
 
-func compareYears(_ pers1: (String, Int, String), _ pers2: (String, Int, String)){
-  if pers1.1 > pers2.1{
+func compareYears(_ pers1: (String, Int, String), _ pers2: (String, Int, String)) {
+  if pers1.1 > pers2.1 {
     print("\(pers1.0) старше, чем \(pers2.0) на \(pers1.1 - pers2.1) лет")
-  }else{
+  } else {
     print("\(pers2.0) старше, чем \(pers1.0) на \(pers2.1 - pers1.1) лет")
   }
 }
 
-var person1 = (name: "Vlad", age: 50, sex: "m")
-var person2 = (name: "Sasha", age: 20, sex: "m")
-var person3 = (name: "Vadim", age: 56, sex: "m")
-var person4 = (name: "Oleg", age: 12, sex: "m")
-var person5 = (name: "Dima", age: 4, sex: "m")
+let person1 = (name: "Vlad", age: 50, sex: "m")
+let person2 = (name: "Sasha", age: 20, sex: "m")
+let person3 = (name: "Vadim", age: 56, sex: "m")
+let person4 = (name: "Oleg", age: 12, sex: "m")
+let person5 = (name: "Dima", age: 4, sex: "m")
 
 
-var persons = [person1, person2, person3, person4, person5]
+let persons = [person1, person2, person3, person4, person5]
 
 persons.forEach { pers in
   printPerson(pers)
