@@ -33,12 +33,12 @@ enum MacDonalds {
           return "Картошка Фри - такой позиции нет в наличие"
         }
       case .cheese(let value, let key): 
-				 if key {
-           return "Чизбургир \(value)"
-         }
-         else {
-          return "Чизбургир - такой позиции нет в наличие"
-         }
+				if key {
+          return "Чизбургир \(value)"
+        }
+        else {
+        return "Чизбургир - такой позиции нет в наличие"
+        }
 			case .icecream(let value, let key): 
 				if key {
           return "Мороженное \(value)"
@@ -58,7 +58,7 @@ enum MacDonalds {
   }
 }
 
-var order: [MacDonalds] = [MacDonalds.burgir(2, Bool.random()), 
+let order: [MacDonalds] = [MacDonalds.burgir(2, Bool.random()), 
                            MacDonalds.cola(MacDonalds.Cola.s, Bool.random()), 
                            MacDonalds.cheese(3, Bool.random()),
                            MacDonalds.potato(MacDonalds.Potato.m, Bool.random())] 
