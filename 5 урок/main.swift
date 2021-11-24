@@ -3,18 +3,20 @@ var arr: [Int] = []
 for _ in 1...10 {
     arr.append(Int.random(in: 1..<100))
 }
-print(arr)
+arr.forEach {num in 
+  print(num)
+}
 
-var moreThan30 = arr.filter{$0 > 30}
+let moreThan30 = arr.filter{$0 > 30}
 print(moreThan30)
 
-var stringArr: [String] = arr.map{String($0)}
+let stringArr: [String] = arr.map{String($0)}
 print(stringArr)
 
-var sum = arr.reduce(0){$0 + $1}
+let sum = arr.reduce(0){$0 + $1}
 print(sum)
 
-var lessThanMiddle = arr.filter{$0 < sum / arr.count}
+let lessThanMiddle = arr.filter{$0 < sum / arr.count}
 print(lessThanMiddle)
 
 //DICTIONARY
@@ -34,7 +36,7 @@ month["Декабрь"] = (31, 12)
 
 var alldays = 0
 
-month.forEach {(key, value) in 
+month.forEach { (key, value) in 
   print("В месяце \(key) \(value.0) дней, его порядковый номер \(value.1)" )
   alldays += value.0
 }
