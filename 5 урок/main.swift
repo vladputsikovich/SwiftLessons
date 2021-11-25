@@ -7,16 +7,16 @@ arr.forEach {num in
   print(num)
 }
 
-let moreThan30 = arr.filter{$0 > 30}
+let moreThan30 = arr.filter { $0 > 30 }
 print(moreThan30)
 
-let stringArr: [String] = arr.map{String($0)}
+let stringArr: [String] = arr.map { String($0) }
 print(stringArr)
 
-let sum = arr.reduce(0){$0 + $1}
+let sum = arr.reduce(0) { $0 + $1 }
 print(sum)
 
-let lessThanMiddle = arr.filter{$0 < sum / arr.count}
+let lessThanMiddle = arr.filter { $0 < sum / arr.count }
 print(lessThanMiddle)
 
 //DICTIONARY
