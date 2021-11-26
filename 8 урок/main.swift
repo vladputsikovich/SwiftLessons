@@ -4,13 +4,13 @@ protocol Food {
   var name: String { get }
   func taste()
 }
-protocol Storable : Food {
+protocol Storable {
   var name: String { get }
   var expired: Bool { get set }
-  var daysToExpire: Int { get set }
+  var daysToExpire: Int { get set}
   func taste()
 }
-class Apple: Storable {
+class Apple: Food, Storable {
   var name: String
   var expired: Bool
   var daysToExpire: Int
@@ -23,7 +23,7 @@ class Apple: Storable {
     print("Емае какое вкусное \(self.name)")
   }
 }
-class Banana: Storable {
+class Banana: Food, Storable {
   var name: String
   var expired: Bool
   var daysToExpire: Int
@@ -46,41 +46,50 @@ class Juice: Food {
   }
 }
 
+func printFood(_ product: [AnyObject]) {
+  product.forEach { prod in
+    if let prod  = prod as? Food {
+      print("Продукт: \(prod.name)")
+      prod.taste()
+    }
+    else {
+      if let prod  = prod as? Storable {
+        print("Продукт ХРАНИЫЙ: \(prod.name)")
+        prod.taste()
+      }
+    }
+  }
+  print("\n")
+}
+
+// func sortProduct(_ product: [AnyObject]) -> [AnyObject] {
+//   var newArr = product
+//   if let product = product as? [Storable] {
+//     newArr = product.sorted { $0.daysToExpire > $1.daysToExpire }
+//   }else{
+//     newArr = product.sorted { $0.name > $1.name }
+//   }
+//   return newArr
+// }
+
 let apple = Apple("Яблоко", true, 20)
 let banana = Banana("Банан", false, 5)
 let juice = Juice("Cок")
 
-var package: [Food] = [apple, banana, juice]
+var package: [AnyObject] = [apple, banana, juice]
 
-printFood(sortProduct(package))
+printFood(package)
 
-var freeze: [Food] = []
+var freeze: [AnyObject] = []
 
 package.forEach { prod in 
   if let prod = prod as? Storable {
     if prod.expired {
-      freeze.append(prod)
+      if let prod = prod as? AnyObject {
+        freeze.append(prod)
+      }
     }
-  } else {
-    freeze.append(prod)
   }
 }
 
-printFood(sortProduct(freeze))
-
-func printFood(_ product: [Food]) {
-  product.forEach { prod in
-    print("Продукт: \(prod.name)")
-    prod.taste()
-  }
-  print("\n")
-}
-func sortProduct(_ product: [Food]) -> [Food] {
-  var newArr = product
-  if let product = product as? [Storable] {
-    newArr = product.sorted { $0.daysToExpire > $1.daysToExpire }
-  } else {
-    newArr = product.sorted { $0.name > $1.name }
-  }
-  return newArr
-}
+printFood(freeze)
