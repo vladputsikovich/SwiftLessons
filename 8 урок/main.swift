@@ -93,3 +93,20 @@ package.forEach { prod in
 }
 
 printFood(freeze)
+
+//РАСШИРЕНИЯ
+
+extension Array where Element : Equatable {
+    var unique: [Element] {
+        var uniqueValues: [Element] = []
+        forEach { item in
+            if !uniqueValues.contains(item) {
+                uniqueValues += [item]
+            }
+        }
+        return uniqueValues
+    }
+}
+
+var arr: [String] = ["1", "1", "2"]
+print(arr.unique)
