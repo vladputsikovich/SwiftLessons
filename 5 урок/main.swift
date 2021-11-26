@@ -20,7 +20,7 @@ let lessThanMiddle = arr.filter { $0 < sum / arr.count }
 print(lessThanMiddle)
 
 //DICTIONARY
-var month = [String: (Int, Int)] ()
+var month = [String: (Int, Int)]()
 month["Январь"] = (31, 1)
 month["Февраль"] = (28, 2)
 month["Март"] = (31, 3)
@@ -37,7 +37,7 @@ month["Декабрь"] = (31, 12)
 var alldays = 0
 
 month.forEach { (key, value) in 
-  print("В месяце \(key) \(value.0) дней, его порядковый номер \(value.1)" )
+  print("В месяце \(key) \(value.0) дней, его порядковый номер \(value.1)")
   alldays += value.0
 }
 

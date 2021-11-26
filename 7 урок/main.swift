@@ -22,11 +22,11 @@ func dropRepeatAndMirror (_ str: String) -> String {
   var buffer: [String] = []
   var answer = ""
   str.forEach { s in
-     if !buffer.contains(String(s)) {
+     guard !buffer.contains(String(s)) {
        buffer.append(String(s))
      }
   }
-  for index in stride(from: buffer.count-1, through: 0, by: -1) {
+  for index in stride(from: buffer.count - 1, through: 0, by: -1) {
      answer += buffer[index]
   }
   return answer
