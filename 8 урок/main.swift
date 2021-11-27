@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 protocol Food {
   var name: String { get }
@@ -110,3 +111,18 @@ extension Array where Element : Equatable {
 
 var arr: [String] = ["1", "1", "2"]
 print(arr.unique)
+
+extension UIColor {
+    static func random() -> UIColor {
+        return UIColor(
+            red: Double.random(in: 0.0...1.0),
+            green: Double.random(in: 0.0...1.0),
+            blue:Double.random(in: 0.0...1.0),
+            alpha: Double.random(in: 0.0...1.0))
+    }
+}
+
+let color = UIColor.random()
+print(color)
+
+
