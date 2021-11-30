@@ -1,0 +1,148 @@
+1997-02-18 00:00:00 +0000
+2003-11-02 00:00:00 +0000
+1989-05-21 00:00:00 +0000
+2000-08-28 00:00:00 +0000
+1986-07-22 00:00:00 +0000
+1997-04-13 00:00:00 +0000
+2001-11-11 00:00:00 +0000
+2000-02-28 00:00:00 +0000
+1996-08-19 00:00:00 +0000
+2004-10-25 00:00:00 +0000
+1983-06-06 00:00:00 +0000
+1970-12-11 00:00:00 +0000
+2003-12-29 00:00:00 +0000
+1999-05-30 00:00:00 +0000
+1988-10-30 00:00:00 +0000
+1988-10-08 00:00:00 +0000
+2001-05-17 00:00:00 +0000
+2004-10-07 00:00:00 +0000
+1975-06-01 00:00:00 +0000
+1997-07-16 00:00:00 +0000
+1986-02-14 00:00:00 +0000
+1986-02-08 00:00:00 +0000
+2001-11-15 00:00:00 +0000
+1988-12-10 00:00:00 +0000
+1982-08-22 00:00:00 +0000
+2004-10-16 00:00:00 +0000
+1998-11-22 00:00:00 +0000
+1970-08-28 00:00:00 +0000
+2003-06-15 00:00:00 +0000
+1987-11-26 00:00:00 +0000
+
+
+Дима Бэкхзем 1970
+Алексей Катышкин 1970
+Влад Пустин 1975
+Влад Карманный 1982
+Алексей Карманный 1983
+Кирилл Пустин 1986
+Саша Карманный 1986
+Алексей Карманный 1986
+Алексей Пуцыкович 1987
+Саша Бэкхзем 1988
+Влад Катышкин 1988
+Дима Катышкин 1988
+Дима Пуцыкович 1989
+Дима Карманный 1996
+Саша Пуцыкович 1997
+Кирилл Пуцыкович 1997
+Влад Катышкин 1997
+Саша Катышкин 1998
+Алексей Пуцыкович 1999
+Кирилл Бэкхзем 2000
+Влад Пуцыкович 2000
+Влад Пуцыкович 2001
+Кирилл Катышкин 2001
+Саша Пустин 2001
+Саша Пуцыкович 2003
+Кирилл Пустин 2003
+Кирилл Пуцыкович 2003
+Кирилл Карманный 2004
+Кирилл Карманный 2004
+Кирилл Пустин 2004
+
+Первые дни месяцев
+
+Friday January
+Monday February
+Monday March
+Thursday April
+Saturday May
+Tuesday June
+Thursday July
+Sunday August
+Wednesday September
+Friday October
+Monday November
+Wednesday December
+
+Воскресенья месяцев
+
+Sunday January 03
+Sunday January 10
+Sunday January 17
+Sunday January 24
+Sunday January 31
+Sunday February 07
+Sunday February 14
+Sunday February 21
+Sunday February 28
+Sunday March 07
+Sunday March 14
+Sunday March 21
+Sunday March 28
+Sunday April 04
+Sunday April 11
+Sunday April 18
+Sunday April 25
+Sunday May 02
+Sunday May 09
+Sunday May 16
+Sunday May 23
+Sunday May 30
+Sunday June 06
+Sunday June 13
+Sunday June 20
+Sunday June 27
+Sunday July 04
+Sunday July 11
+Sunday July 18
+Sunday July 25
+Sunday August 01
+Sunday August 08
+Sunday August 15
+Sunday August 22
+Sunday August 29
+Sunday September 05
+Sunday September 12
+Sunday September 19
+Sunday September 26
+Sunday October 03
+Sunday October 10
+Sunday October 17
+Sunday October 24
+Sunday October 31
+Sunday November 07
+Sunday November 14
+Sunday November 21
+Sunday November 28
+Sunday December 05
+Sunday December 12
+Sunday December 19
+Sunday December 26
+
+Рабочие дни
+
+[21, 20, 23, 22, 21, 22, 22, 22, 22, 21, 22, 23]
+В January 21 рабочих дней
+В February 20 рабочих дней
+В March 23 рабочих дней
+В April 22 рабочих дней
+В May 21 рабочих дней
+В June 22 рабочих дней
+В July 22 рабочих дней
+В August 22 рабочих дней
+В September 22 рабочих дней
+В October 21 рабочих дней
+В November 22 рабочих дней
+В December 23 рабочих дней
