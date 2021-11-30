@@ -23,23 +23,25 @@ let names: [String] = ["Влад","Дима","Саша","Кирилл","Алек
 
 var students: [Student] = []
 
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd MMMM yyyy"
+
 (0...29).forEach { num in
   dateComponent = DateComponents(calendar: calendar, 
                                  year: Int.random(in: 1970..<2005), 
                                  month: Int.random(in: 1...12), 
                                  day: Int.random(in: 1...30))
   componentDate = calendar.date(from: dateComponent)
-  students.append(Student(componentDate!, names.randomElement()!, females.randomElement()!))
+  students.append(Student(componentDate ?? date, names.randomElement() ?? "" , females.randomElement() ?? ""))
 }
 
 students.forEach { stud in 
-  print(stud.dateOfBirth)
+  print("\(dateFormatter.string(from: stud.dateOfBirth))")
 }
 print("\n")
 
 let sortedArray = students.sorted { $0.dateOfBirth < $1.dateOfBirth }
 
-let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy"
 
 sortedArray.forEach { stud in 
@@ -56,7 +58,7 @@ print("\nПервые дни месяцев\n")
                                  month: m, 
                                  day: 1)
   componentDate = calendar.date(from: dateComponent)
-  print("\(dateFormatter.string(from: componentDate!))")
+  print("\(dateFormatter.string(from: componentDate ?? date))")
 }
 
 print("\nВоскресенья месяцев\n")
@@ -65,38 +67,50 @@ dateFormatter.dateFormat = "EEEE MMMM dd"
 
 var firstSunday = 3
 
-(1...52).forEach { m in 
+var dateComponentStart = DateComponents(calendar: calendar, 
+                                 year: 2021, 
+                                 month: 1, 
+                                 day: 1)
+var dateComponentFinish = DateComponents(calendar: calendar, 
+                                 year: 2022, 
+                                 month: 1, 
+                                 day: 1)
+var componentDates = calendar.dateComponents([.weekOfYear], from: dateComponentStart, to: dateComponentFinish)
+
+let weeks = componentDates.weekOfYear ?? 0
+
+(1...weeks).forEach { m in 
   dateComponent = DateComponents(calendar: calendar, 
                                  year: 2021, 
                                  month: 1, 
                                  day: firstSunday)
   componentDate = calendar.date(from: dateComponent)
-  print("\(dateFormatter.string(from: componentDate!))")
+  print("\(dateFormatter.string(from: componentDate ?? date))")
   firstSunday += 7
 }
 
 print("\nРабочие дни\n")
 
-
-
 var monthWorkDays: [Int] = []
 var count = 0
 var currentMonth = "January"
 
-(1...365).forEach { d in 
+componentDates = calendar.dateComponents([.day], from: dateComponentStart, to: dateComponentFinish)
+
+let day = componentDates.day ?? 0
+
+(1...day).forEach { d in 
   dateFormatter.dateFormat = "MMMM"
-  dateComponent = DateComponents(calendar: calendar, 
-                                 year: 2021, 
-                                 month: 1, 
-                                 day: d)
-  componentDate = calendar.date(from: dateComponent)
-  if currentMonth != dateFormatter.string(from: componentDate!) {
-    currentMonth = dateFormatter.string(from: componentDate!)
+  dateComponentStart.day = d
+  componentDate = calendar.date(from: dateComponentStart)
+  
+  if currentMonth != dateFormatter.string(from: componentDate ?? date) {
+    currentMonth = dateFormatter.string(from: componentDate ?? date)
     monthWorkDays.append(count)
     count = 0
   }
   dateFormatter.dateFormat = "EEEE"
-  if "Sunday" != dateFormatter.string(from: componentDate!) && "Saturday" !=  dateFormatter.string(from: componentDate!) {
+  if "Sunday" != dateFormatter.string(from: componentDate ?? date) && "Saturday" !=  dateFormatter.string(from: componentDate ?? date) {
     count += 1
   }
   if d == 365 {
@@ -106,11 +120,12 @@ var currentMonth = "January"
 
 dateFormatter.dateFormat = "MMMM"
 
-(1...12).forEach { m in 
-  dateComponent = DateComponents(calendar: calendar, 
-                                 year: 2021, 
-                                 month: m, 
-                                 day: 1)
-  componentDate = calendar.date(from: dateComponent)
-  print("В \(dateFormatter.string(from: componentDate!)) \(monthWorkDays[m-1]) рабочих дней")
+componentDates = calendar.dateComponents([.month], from: dateComponentStart, to: dateComponentFinish)
+
+let mth = componentDates.month ?? 0
+
+(1...mth).forEach { m in 
+  dateComponentStart.month = m
+  componentDate = calendar.date(from: dateComponentStart)
+  print("В \(dateFormatter.string(from: componentDate ?? date)) \(monthWorkDays[m-1]) рабочих дней")
 }
