@@ -1,0 +1,6 @@
+vlad 0
+sasha 4
+dima 33
+oleg 76
+eug 88
+OPER 14
