@@ -22,7 +22,7 @@ func intArrClosure (_ numArr: [Int], _ closure: (Int, Int?) -> String) -> Int {
 }
 
 intArrClosure(numArr, { num, numOpt in
-    if num > numOpt! {
+    if num > numOpt ?? 0 {
         return "ДА"
     } else {
         return "НЕТ"
@@ -31,7 +31,7 @@ intArrClosure(numArr, { num, numOpt in
 
 var randomChar: [String] = []
 
-let randomString: () = "sdfiNUV56YY53F3FF".forEach {
+let randomString: () = "sdfiNUV345345#!#@!@56YY53F3F".forEach {
     randomChar.append(String($0))
 }
 var glasn = ["A","E","Y","U","O","I"]
